@@ -35,13 +35,20 @@
 }
 
 .courseDesc {
+}
+
+.shortDesc {
   overflow: hidden;
-  text-overflow: ellipsis;
+  line-clamp: 2;
+}
+
+.longDesc {
+
 }
 
 .courseFavorite {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 10px;
+  align-items: flex-start;
+  padding-right: 10px;
 }

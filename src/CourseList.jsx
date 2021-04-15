@@ -33,15 +33,20 @@ const CourseListItem = (props) => {
     favorite,
     id,
   } = props.course;
+  const [showDetail, setShowDetail] = useState(false);
+  const courseClickHandler = e => {
+    setShowDetail(oldVal => !oldVal);
+  }
+  const descClass = showDetail ? "longDesc" : "shortDesc";
   return (
-    <div className="courseListItem">
+    <div className="courseListItem" onClick={courseClickHandler}>
       <div className="authorPhoto">
         <img alt="course author" src={instructor_image_url} />
       </div>
-      <div className="courseInfo">
+      <div className="courseInfo" style={{maxHeight: showDetail ? "unset" : "100px"}}>
         <div className="courseTitle">{title}</div>
         <div className="authorName"> {instructor_name} </div>
-        <div className="courseDesc"> {description} </div>
+        <div className={"courseDesc " + descClass}> {description} </div>
       </div>
       <Favorite favorite={favorite} id={id} email={USER_EMAIL}/>
     </div>
