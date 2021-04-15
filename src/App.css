@@ -3,6 +3,12 @@
   flex-direction: column;
 }
 
+.courseListHeader {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .courseListItem {
   display: flex;
   flex-direction: row;
