@@ -18,7 +18,7 @@ const Favorite = (props) => {
       .then((data) => {});
   };
   return (
-    <div className="favorite" onClick={onFavoriteClickHandler}>
+    <div className="courseFavorite" onClick={onFavoriteClickHandler}>
       <Heart fill={favorite ? "#e76f51" : "grey"} />
     </div>
   );
@@ -28,7 +28,7 @@ const CourseListItem = (props) => {
   const {
     title,
     description,
-    insturctor_name,
+    instructor_name,
     instructor_image_url,
     favorite,
     id,
@@ -39,9 +39,9 @@ const CourseListItem = (props) => {
         <img alt="course author" src={instructor_image_url} />
       </div>
       <div className="courseInfo">
-        {title} <br />
-        {description} <br />
-        {insturctor_name}
+        <div className="courseTitle">{title}</div>
+        <div className="authorName"> {instructor_name} </div>
+        <div className="courseDesc"> {description} </div>
       </div>
       <Favorite favorite={favorite} id={id} email={USER_EMAIL}/>
     </div>
@@ -70,7 +70,7 @@ const CourseList = (props) => {
       );
   }, []);
   return isLoaded ? (
-    <div className="CourseList">
+    <div className="courseList">
       {error !== null ?? "Error while loading the course list: " + error}
       {courses.map((course) => (
         <CourseListItem course={course} key={course.id} />

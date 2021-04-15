@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.courseList {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.courseListItem {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.authorPhoto {
+  width: 100px;
+  height: 100px;
+}
+
+.authorPhoto>img{
+  width: 100px;
+  height: 100px;
+}
+
+.courseInfo {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100px;
+}
+
+.courseTitle {
+  font-weight: bold;
+}
+
+.authorName {
+  font-style: italic;
+}
+
+.courseDesc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.courseFavorite {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  padding: 10px;
 }
